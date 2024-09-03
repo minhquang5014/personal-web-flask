@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Machine learning{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="/static/css_folder/ml.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+{% endblock %}
+
+{% block content %}
+<section class="education" id="education">
+    <h3 class="heading">My <span>ML projects</span></h3>
+    <div class="education-row">
+        <div class="education-column">
+            <h2 class="title">Convolutional Neural Network</h2>
+            <div class="education-box">
+                <div class="education-content">
+                    <div class="content">
+                        <div class="year"></div>
+                        <h2>Image classification</h2>
+                        <p>A CNN, or Convolutional Neural Network, 
+                            is a type of artificial intelligence. It is mainly used for analyzing images. 
+                            It works by breaking the image into small pieces and looking for patterns. 
+                            These patterns help it recognize things in the image, like edges or shapes. 
+                            CNNs are used in many applications, like facial recognition, self-driving cars, and medical image analysis.
+                            Some of the projects I have made included facial detection and recognition, object detection and object tracking,
+                            and image segmentation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="title">Recurrent neural network</h2>
+            <div class="education-box">
+                <div class="education-content">
+                    <div class="content">
+                        <div class="year"></div>
+                        <h2>Long short term memory (LSTM)</h2>
+                        <p>A Recurrent Neural Network (RNN) is a type of neural network designed for processing sequences of data, 
+                            such as time series, language, or video frames. Unlike traditional feedforward neural networks, 
+                            RNNs have a unique architecture that includes loops, allowing them to maintain a hidden state that captures information about previous elements in the sequence. 
+                            This makes them well-suited for tasks where the order of inputs matters, such as natural language processing (NLP) or sequence prediction.
+                            I've been working on car price prediction and it was a pretty fun project to build. A lot of new stuffs to learn, from preparing and processing the data to training the model and making the prediction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="title">Generative adversarial networks</h2>
+            <div class="education-box">
+                <div class="education-content">
+                    <div class="content">
+                        <div class="year"></div>
+                        <h3>GANs</h3>
+                        <p>Generative Adversarial Networks (GANs) are a class of machine learning models used for generating new data samples that are similar to a given dataset. 
+                            GANs consist of two main components, a generator and a discriminator, which are trained simultaneously in a game-like scenario.
+                            I've been trying to generate cat and dog images based on a large number of datasets but it still has got some errors so I'll keep updating on that
+                        </p>
+                    </div>
+                </div>
+
+            <h3 class="title">Stable diffution models</h3>
+            <div class="education-box">
+                <div class="education-content">
+                    <div class="content">
+                        <div class="year"></div>
+                        <h3>Stable diffusion and large language model</h3>
+                        <p>
+                            Stable Diffusion Models are a type of generative model used for generating high-quality images, often from text prompts, based on a process called diffusion. 
+                            These models are part of the broader category of Diffusion Models, which have recently gained attention for their ability to generate detailed and realistic images.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
