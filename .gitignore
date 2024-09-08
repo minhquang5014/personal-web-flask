@@ -1,3 +1,5 @@
 __pycache__
+
+# ignore the environment variable file and key json for storing users' information in the database
 .env
 website/key.json
