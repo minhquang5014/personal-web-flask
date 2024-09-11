@@ -1,4 +1,5 @@
 /* Basic reset */
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -48,6 +49,7 @@
     padding: 10px;
     border: none;
     cursor: pointer;
+    z-index: -1;
   }
   
   /* When the sidebar is hidden */
@@ -59,41 +61,42 @@
   .main-content.shifted {
     margin-left: 0;
   }
-.header {
+  .main-content .header{
     align-items: center;
     position: fixed;
     top:0;
     right:0;
-    width: 100%;
+    width: 60%;
     padding: 20px 10%;
     background: transparent;
     display: flex;
     justify-content: flex-end;
-}
-.header p{
+  }
+  .header p{
     font-size: 30px;
     color: #ededed;
     text-decoration:none;
     font-weight: 500;
     margin-left: 35px;
     font-family: 'Sevillana', cursive;
-}
-.home {
+  }
+  .main-content .home {
     height: 100vh;
     display:flex;
     align-items: center;
     padding: 0 10%;
-}
-.home-content{
-    max-width: 600px; 
-}
-.home-content h1{
+  }
+  .home .home-content {
+    max-width: 700px; 
+    /* or 60% */
+  }
+  .home-content h1{
     position: relative;
     font-size: 40px;
     font-weight: 500;
     color: rgb(0, 255, 221);
-}
-.home-content h1::before{
+  }
+  .home-content h1::before{
     content:'';
     position: absolute;
     top: 0;
@@ -103,8 +106,8 @@
     background: black;
     animation: showRight 1s ease forwards;
     animation-delay: 1s;
-}
-.home-content h2{
+  }
+  .home-content h2{
     position: relative;
     font-size: 30px;
     font-weight: 300;
@@ -240,8 +243,8 @@
     background: #081b29;
     opacity: .8;
 }
-@keyframes showRight {
+  @keyframes showRight {
     100% {
         width: 0;
     }
-}
+  }

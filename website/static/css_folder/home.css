@@ -15,7 +15,7 @@ body .bg{
     position: fixed;
     top:0;
     right:0;
-    width: 100%;
+    width: 80%;
     padding: 20px 10%;
     background: transparent;
     display: flex;
@@ -32,8 +32,10 @@ body .bg{
 .home {
     height: 100vh;
     display:flex;
-    align-items: center;
-    padding: 0 10%;
+    align-items: center; /* Center vertically */
+    justify-content: flex-end; /* Align content to the right */
+    padding-right: 10%; /* Padding on the right */
+    padding-left: 20%; /* Adds space on the left */
 }
 .home-content{
     max-width: 600px; 
