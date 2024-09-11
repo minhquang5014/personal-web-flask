@@ -128,3 +128,4 @@ input[type="checkbox"]:checked ~ .sidebar {
 input[type="checkbox"]:checked ~ .sidebar ul li {
     transform: translateX(0);
 }
+

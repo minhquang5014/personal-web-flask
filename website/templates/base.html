@@ -15,10 +15,10 @@
             crossorigin="anonymous"
         >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <!-- <link
+        <link
             rel="stylesheet"
-            href="/static/css_folder/base.css"
-        >  -->
+            href="/static/css_folder/base2.css"
+        > 
         {% block styles %}{% endblock %}
         <title>{% block title %}{% endblock %}</title>
 
@@ -42,28 +42,19 @@
                 </div>
             </div>
         </nav> -->
-        <section class="bg">
-            <label>
-                <!--create a toggle button-->
-                <input type="checkbox">
-                <div class="toggle">
-                    <span class="common top_line"></span>
-                    <span class="common middle_line"></span>
-                    <span class="common bottom_line"></span>
-                </div>
-                
-                <div class="sidebar">
-                    <h1>MY PROFILE</h1>
-                    <ul>
-                        <li style="--1:1"><a href=""><i class="fa-solid fa-user">About Me</i></a></li>
-                        <li style="--1:2"><a href="ml"><i class="fas fa-tv">Machine learning</i></a></li>
-                        <li style="--1:3"><a href="computer-vision"><i class="fas fa-tv">Computer vision</i></a></li>
-                        <li style="--1:4"><a href="other-achievements"><i class="fas fa-tv">Other achievements</i></a></li>
-                        <li style="--1:5"><a href=""><i class="far fa-comment">Contact</i></a></li>
-                    </ul>
-                </div>
-            </label>
-        </section>
+        <div id="main" class="main-content">
+            <button id="toggleBtn" class="toggle-btn">☰ MY PROFILE</button>
+        </div>
+        <div id="navbar" class="sidebar">
+            <ul>
+                <li style="--1:1"><a href=""><i class="fa-solid fa-user">About Me</i></a></li>
+                <li style="--1:2"><a href="ml"><i class="fas fa-tv">Machine learning</i></a></li>
+                <li style="--1:3"><a href="computer-vision"><i class="fas fa-tv">Computer vision</i></a></li>
+                <li style="--1:4"><a href="other-achievements"><i class="fas fa-tv">Other achievements</i></a></li>
+                <li style="--1:5"><a href=""><i class="far fa-comment">Contact</i></a></li>
+            </ul>
+        </div>
+
 
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -99,5 +90,6 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
+        <script src="/static/toggle.js"></script>
     </body>
 </html>

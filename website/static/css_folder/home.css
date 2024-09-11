@@ -5,7 +5,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', 'sans-serif'
 }
-body .bg{
+body {
     background: black;
     /* color: #dedede; */
 }
@@ -15,7 +15,7 @@ body .bg{
     position: fixed;
     top:0;
     right:0;
-    width: 100%;
+    width: 70%;
     padding: 20px 10%;
     background: transparent;
     display: flex;
