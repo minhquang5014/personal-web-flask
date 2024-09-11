@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content ="width=device-width, initial-scale=1">
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        >
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- <link
+            rel="stylesheet"
+            href="/static/css_folder/base.css"
+        >  -->
+        {% block styles %}{% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+
+    </head>
+    <body>
+        <!--
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button 
+            class="navbar-toggler" 
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link">About me</a>
+                    <a class="nav-item nav-link">Computer Vision projects</a>
+                    <a class="nav-item nav-link">Machine Learning projects</a>
+                    <a class="nav-item nav-link">Other achievements</a>
+                </div>
+            </div>
+        </nav> -->
+        <section class="bg">
+            <label>
+                <!--create a toggle button-->
+                <input type="checkbox">
+                <div class="toggle">
+                    <span class="common top_line"></span>
+                    <span class="common middle_line"></span>
+                    <span class="common bottom_line"></span>
+                </div>
+                
+                <div class="sidebar">
+                    <h1>MY PROFILE</h1>
+                    <ul>
+                        <li style="--1:1"><a href=""><i class="fa-solid fa-user">About Me</i></a></li>
+                        <li style="--1:2"><a href="ml"><i class="fas fa-tv">Machine learning</i></a></li>
+                        <li style="--1:3"><a href="computer-vision"><i class="fas fa-tv">Computer vision</i></a></li>
+                        <li style="--1:4"><a href="other-achievements"><i class="fas fa-tv">Other achievements</i></a></li>
+                        <li style="--1:5"><a href=""><i class="far fa-comment">Contact</i></a></li>
+                    </ul>
+                </div>
+            </label>
+        </section>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <!-- The block below is for content -->
+
+        {% block content %}
+        {% endblock %}
+        
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
