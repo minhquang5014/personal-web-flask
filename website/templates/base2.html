@@ -15,10 +15,10 @@
             crossorigin="anonymous"
         >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <!-- <link
+        <link
             rel="stylesheet"
             href="/static/css_folder/base.css"
-        >  -->
+        > 
         {% block styles %}{% endblock %}
         <title>{% block title %}{% endblock %}</title>
 
@@ -62,6 +62,8 @@
                         <li style="--1:5"><a href=""><i class="far fa-comment">Contact</i></a></li>
                     </ul>
                 </div>
+                {% block content %}
+                {% endblock %}
             </label>
         </section>
 
@@ -79,9 +81,6 @@
         {% endwith %}
 
         <!-- The block below is for content -->
-
-        {% block content %}
-        {% endblock %}
         
         <script
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
