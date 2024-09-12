@@ -18,8 +18,9 @@
     border-right: 0.8px solid rgba(218, 213, 213, 0.781);
     transition: 0.5s ease;
     transform: translateX(-300px);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     z-index: 1000;
+    background-color:antiquewhite;
 }
 .sidebar h1 {
     color: #18b95b;
