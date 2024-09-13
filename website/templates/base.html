@@ -24,29 +24,6 @@
 
     </head>
     <body>
-        <!--
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button 
-            class="navbar-toggler" 
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link">About me</a>
-                    <a class="nav-item nav-link">Computer Vision projects</a>
-                    <a class="nav-item nav-link">Machine Learning projects</a>
-                    <a class="nav-item nav-link">Other achievements</a>
-                </div>
-            </div>
-        </nav> -->
-
-        <!--create a toggle button-->
-        <div id="main" class="main-content">
-            <button id="toggleBtn" class="toggle-btn">☰ MY PROFILE</button>
-        </div>
         <div id="navbar" class="sidebar">
             <ul>
                 <li style="--1:1"><a href=""><i class="fa-solid fa-user">About Me</i></a></li>
@@ -56,7 +33,12 @@
                 <li style="--1:5"><a href=""><i class="far fa-comment">Contact</i></a></li>
             </ul>
         </div>
-
+        <!--create a toggle button-->
+        <div id="main" class="main-content">
+            <button id="toggleBtn" class="toggle-btn">☰ MY PROFILE</button>
+            {% block content %}
+            {% endblock %}
+        </div>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -72,9 +54,6 @@
         {% endwith %}
 
         <!-- The block below is for content -->
-
-        {% block content %}
-        {% endblock %}
         
         <script
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
