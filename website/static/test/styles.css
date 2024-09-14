@@ -19,6 +19,7 @@
     background-color: #111;
     overflow-x: hidden;
     transition: all 0.3s;
+    padding-top: 20px;
   }
   
   .sidebar a {
@@ -28,6 +29,7 @@
     color: white;
     display: block;
     transition: 0.3s;
+    padding-bottom: 10px;
   }
   
   .sidebar a:hover {

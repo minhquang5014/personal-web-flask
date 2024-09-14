@@ -5,17 +5,16 @@
     box-sizing: border-box;
     font-family: 'Poppins', 'sans-serif'
 }
-body .bg{
+body{
     background: black;
     /* color: #dedede; */
 }
-
 .header {
     align-items: center;
     position: fixed;
     top:0;
     right:0;
-    width: 80%;
+    width: 60%;
     padding: 20px 10%;
     background: transparent;
     display: flex;
@@ -35,7 +34,7 @@ body .bg{
     align-items: center; /* Center vertically */
     justify-content: flex-end; /* Align content to the right */
     padding-right: 10%; /* Padding on the right */
-    padding-left: 20%; /* Adds space on the left */
+    padding-left: 10%; /* Adds space on the left */
 }
 .home-content{
     max-width: 600px; 
@@ -145,7 +144,7 @@ body .bg{
 .home-sci {
     position: absolute;
     bottom: 40px;
-    width: 50%;
+    width: 60%;
 }
 .home-sci a {
     position: relative;
