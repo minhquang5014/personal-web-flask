@@ -1,56 +1,105 @@
+/* Basic reset */
 @import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-}
-.bg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    filter: brightness(30%);
-    z-index: -1;
-}
-body {
-    background: black;
-    /* color: #dedede; */
-}
-.header {
-    align-items: center;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-color: black;
+  }
+  
+  .sidebar {
+    height: 100vh;
+    width: 300px;
     position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: all 0.3s;
+    padding-top: 20px;
+  }
+  
+  .sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    padding-bottom: 10px;
+  }
+  
+  .sidebar a:hover {
+    background-color: #575757;
+  }
+  
+  .main-content {
+    margin-left: 300px;
+    padding: 15px;
+    transition: all 0.3s;
+  }
+  
+  .toggle-btn {
+    font-size: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: -1;
+  }
+  
+  /* When the sidebar is hidden */
+  .sidebar.collapsed {
+    left: -300px;
+  }
+  
+  /* When the main content is adjusted */
+  .main-content.shifted {
+    margin-left: 0;
+  }
+  .main-content .header{
+    align-items: center;
+    position: sticky;
     top:0;
     right:0;
     width: 100%;
-    padding: 20px;
+    padding: 20px 5%;
     background: transparent;
     display: flex;
-    justify-content: flex-end;
-}
-.header p{
+    justify-content: space-between;
+  }
+  .header p{
     font-size: 30px;
     color: #ededed;
     text-decoration:none;
     font-weight: 500;
     margin-left: 35px;
     font-family: 'Sevillana', cursive;
-}
-.home {
+  }
+  .main-content .home {
     height: 100vh;
     display:flex;
     align-items: center;
-    padding: 0 10%;
-}
-.home-content{
-    max-width: 600px; 
-}
-.home-content h1{
+    padding-left: 10%;
+    padding-right: 3%;
+  }
+  .home .home-content {
+    max-width: 700px; 
+    /* or 60% */
+  }
+  .home-content h1{
     position: relative;
     font-size: 40px;
     font-weight: 500;
     color: rgb(0, 255, 221);
-}
-.home-content h1::before{
+  }
+  .home-content h1::before{
     content:'';
     position: absolute;
     top: 0;
@@ -60,8 +109,8 @@ body {
     background: black;
     animation: showRight 1s ease forwards;
     animation-delay: 1s;
-}
-.home-content h2{
+  }
+  .home-content h2{
     position: relative;
     font-size: 30px;
     font-weight: 300;
@@ -188,139 +237,18 @@ body {
     position: relative;
     top: 0;
     right: 0;
-    width: 500px;
+    width: 800px;
     height: 100%;
     background: transparent;
     transition: .3s;
+    margin-left: 10%;
 }
 .home-imgHover:hover{
     background: #081b29;
     opacity: .8;
 }
 @keyframes showRight {
-    100% {
-        width: 0;
+100% {
+    width: 0;
     }
-}
-.sidebar {
-    position: absolute;
-    height: 100%;
-    width: 300px;
-    border-right: 0.8px solid rgba(223, 213, 213, 0.836);
-    transition: 0.5s ease;
-    transform: translateX(-300px);
-    backdrop-filter: blur(10px);
-    z-index: 1001;
-}
-.sidebar h1 {
-    color: #fff;
-    font-weight: 800;
-    text-align: center;
-    padding: 20px 0;
-    padding-left: 35px;
-    pointer-events: none;
-}
-ul {
-    position: relative;
-}
-ul li {
-    list-style: none;
-    transition: 1s ease;
-    transform: translateX(-200px);
-}
-
-ul li a {
-    color: #fff;
-    display: block;
-    padding: 5px 0;
-    font-weight: 400;
-    text-decoration: none;
-    text-transform: capitalize;
-}
-
-ul li:hover a {
-    color: #05a8a8;
-}
-
-ul li a i {
-    width: 100%;
-    height: 5%;
-    gap: 10px;
-    margin-left: 20px;
-    align-items: left;
-    padding-left: 10px;
-    margin-right: 10px;
-    font-size: 18px;
-}
-
-input[type="checkbox"] {
-    -webkit-appearance: none;
-    visibility: hidden;
-    display: none;
-}
-
-.toggle {
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    top: 20px;
-    left: 20px;
-    border: 0.8px solid rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    border-radius: 2px;
-    z-index: 1001;
-}
-
-.toggle .common {
-    position: absolute;
-    height: 2px;
-    width: 20px;
-    left: 50%;
-    background: #fff;
-    border-radius: 50px;
-    transform: translate(-50%);
-    transition: 0.2s ease;
-}
-
-.toggle .top_line {
-    top: 30%;
-}
-
-.toggle .middle_line {
-    top: 50%;
-}
-
-.toggle .bottom_line {
-    top: 70%;
-}
-
-input[type="checkbox"]:checked ~ .toggle .top_line {
-    transform: rotate(-45deg);
-    left: 2px;
-    top: 14px;
-    width: 25px;
-}
-
-input[type="checkbox"]:checked ~ .toggle .bottom_line {
-    transform: rotate(45deg);
-    left: 2px;
-    top: 14px;
-    width: 25px;
-}
-
-input[type="checkbox"]:checked ~ .toggle .middle_line {
-    transform: translateX(20px);
-    opacity: 0;
-}
-
-input[type="checkbox"]:checked ~ .sidebar {
-    transform: translateX(0);
-}
-
-input[type="checkbox"]:checked ~ .sidebar ul li {
-    transform: translateX(0);
-}
-/* Adding blur effect on home section when sidebar is active */
-input[type="checkbox"]:checked ~ .home {
-    filter: blur(5px);
 }
