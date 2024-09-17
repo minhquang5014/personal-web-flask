@@ -57,6 +57,10 @@ body {
 .main-content.shifted {
   margin-left: 0;
 }
+
+
+
+/* starting from this line is for main content of website */
 .container {
   display: flex;
   flex-wrap: wrap;
