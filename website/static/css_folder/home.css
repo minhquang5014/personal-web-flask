@@ -8,6 +8,7 @@
 body{
     background: black;
     /* color: #dedede; */
+    display: flex;
 }
 .header {
     align-items: center;
