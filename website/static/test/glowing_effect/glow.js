@@ -17,6 +17,6 @@ document.querySelectorAll('.glow').forEach((div, index) => {
         // Optionally reset the glow after a short time
         setTimeout(() => {
             div.style.boxShadow = '';
-        }, 1000);
+        }, 3000);
     });
 });
