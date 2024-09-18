@@ -26,6 +26,7 @@
                     It works by breaking the image into small pieces and looking for patterns. 
                     These patterns help it recognize things in the image, like edges or shapes. 
                 </p>
+                <br>
                 <p>
                     For some of my CNN projects, I have created some models for binary classification or image classification: 
                     including classifying between cats and dogs, MNIST (hand-written digits) or applying in the medical fields to detect malaria diseases.
@@ -47,6 +48,7 @@
                     CNNs would work well image classification, but it lacks the ability to deal with sequences in video, 
                     so it's important that CNNs and RNNs can work well with eath other, so that the model can track the trajectory of an object from one frame to another.
                 </p>
+                <br>
                 <p>
                     I've built some projects like house-price prediction, car price prediction, crypto price prediction.
                     All the yolo models are built Sequntial CNN for real time object detection
@@ -60,8 +62,20 @@
         <hr>
         <div class="container">
             <div class="left-column">
-                <h1>Content Title</h1>
-                <p>This is the content area. You can add your text, articles, or other information here. This column takes up 50% of the width of the page.</p>
+                <h1>GANs</h1>
+                <p>Generative Adversarial Networks (GANs) are a class of machine learning models used for generating new data samples that are similar to a given dataset. 
+                    GANs consist of two main components, a generator and a discriminator, which are trained simultaneously in a game-like scenario.
+                    The generator's role is to create data indistinguishable from real-world data, 
+                    while the discriminator evaluates the data, determining if it's genuine or produced by the generator.
+                    This innovative architecture allows GAN models to generate realistic synthetic data, pushing the boundaries of AI's creative potential.
+                </p>
+                <br>
+                <p>
+                    Based on a large number of dog and cat images I obtain, besides using this dataset for training my CNN model to categorize dog and cat images,
+                    I use it for training my GANs model to produce realistic dog or cat images. At the first stage of my training process, model will learn at a high rate (0.01),
+                    so it's important for me to reduce the learning rate over the 100 or 200 epochs as the training goes, or otherwise, there'll be a high chance of overfitting.
+                    The result was somewhat "not quite what I expected", but I made my first steps in generative AI field. 
+                </p>
             </div>
             <div class="right-column">
                 <h2>Image Section</h2>
