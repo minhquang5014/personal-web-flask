@@ -50,11 +50,21 @@
     <div class="left-column">
         <h1>Working with pretrained YOLO and SSD models</h1>
         <p>
-            
+            YOLO is a real-time object detection system that treats object detection as a single regression problem.
+            Unlike traditional methods (like R-CNN), which generate multiple region proposals and then classify each region, 
+            YOLO makes predictions directly from the full image in one go, which makes it faster.
         </p>
         <br>
         <p>
-            
+            SSD is another real-time object detection algorithm that, like YOLO, makes predictions directly from the image in a single pass, 
+            but it introduces some improvements in accuracy and precision, especially for detecting objects of different sizes.
+            I have used the SSD-mobilenet model, it's a combination of SSD model and MobileNet architecture. The MobileNet is a backbone of lightweight and fast detection, in my opinion.
+        </p>
+        <br>
+        <p>
+            YOLO and SSD is both useful for tasks like person detection in real-time, counting objects, tracking person or the trajectory of objects
+            For YOlo v5n, I find like we can train our custom dataset much easier, with the help of the templates on google colab notebook, but anyway, this is my personal opinion.
+            For the code, check it out on my github repo.
         </p>
     </div>
     <div class="right-column">
@@ -65,8 +75,9 @@
 <hr>
 <div class="container">
     <div class="left-column">
-        <h1></h1>
+        <h1>Hand detection</h1>
         <p>
+            
         </p>
         <br>
         <p>
