@@ -42,7 +42,7 @@
                 </div>
             </div>
         </nav> -->
-        {% if user.is_authenticated %}
+
         <section class="bg">
             <label>
                 <!--create a toggle button-->
@@ -67,7 +67,7 @@
                 {% endblock %}
             </label>
         </section>
-        {% endif %}
+
 
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
