@@ -12,7 +12,7 @@
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    width: 100%;
+    width: flex 100%;
     padding-top: 10px;
   }
   
