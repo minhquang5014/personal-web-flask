@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     height: auto;
     width: 100%;
+    padding-top: 10px;
   }
   
   .left-column {
