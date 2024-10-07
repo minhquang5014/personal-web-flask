@@ -15,23 +15,32 @@ client = gspread.authorize(credentials)
 # Open the Google Sheet by name
 sheet_name = 'database'  # Replace with your sheet's name
 
-def check_available_row():
-    """Filtering out the rows that return None to find out the next empty row
-    Once an empty row has been determined, we can write down the new info, without overwriting the already existing rows"""
-    pass
+# def check_available_row():
+#     """Filtering out the rows that return None to find out the next empty row
+#     Once an empty row has been determined, we can write down the new info, without overwriting the already existing rows"""
+#     pass
 
-try:
-    sheet = client.open(sheet_name).sheet1
-    print(f"Successfully connected to {sheet_name}")
+def write_in4_to_sheet(email, username, datetime):
+    try:
+        sheet = client.open(sheet_name).sheet1
 
-    list_of_hashes = sheet.get_all_records()
-    print(list_of_hashes)
-    
-    # Test reading a value
-    cell_value = sheet.cell(1, 1).value 
-    print(f"The value in A1 is: {cell_value}")
+        # This might be very slow as it will loop through every row and column of the spreadsheet
+        # ugly code here as get_all_records will make you loop through the entire spreadsheet, Idk, O(n2) for the runtime complexity
+        # list_of_hashes = sheet.get_all_records()
 
-    # sheet.update_cell(2, 1, "minhquang5014@gmail.com")
+        # instead, we should loop the one column only
+        # get the list of value in the first column
+        email_column = sheet.col_values(1)
+        next_line = len(email_column) + 1  
 
-except Exception as e:
-    print(f"Unable to connect to the Google Sheet: {e}")
+        # Test reading a value
+        # cell_value = sheet.cell(1, 1).value 
+        # print(f"The value in A1 is: {cell_value}")
+
+        # # this is for writing
+        sheet.update_cell(next_line, 1, email)
+        sheet.update_cell(next_line, 2, username)
+        sheet.update_cell(next_line, 3, datetime)
+    except Exception as e:
+        print(e)
+

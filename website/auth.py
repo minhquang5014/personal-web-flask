@@ -1,5 +1,6 @@
 from flask import Blueprint, request, flash, redirect, url_for, render_template
 from flask_login import login_user, login_required, current_user
+from website.static.test.test_key import write_in4_to_sheet
 auth = Blueprint('auth', __name__)
 
 
@@ -15,5 +16,9 @@ def login():
             flash("Name must be greater than 5 character", category='danger')
         else:
             flash(f"Welcome {full_name} to join in my personal website", category='success')
+            from datetime import datetime
+            now = datetime.now()
+            dtString = now.strftime('%d/%m/%Y-%H:%M:%S')
+            write_in4_to_sheet(email, full_name, dtString)
             return redirect(url_for('views.home'))
     return render_template("login.html")
