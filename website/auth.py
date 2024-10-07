@@ -20,6 +20,7 @@ def login():
             now = datetime.now()
             dtString = now.strftime('%d/%m/%Y-%H:%M:%S')
             sheet = GoogleSheetClient('website/key.json', 'database')
-            sheet.write_in4_to_sheet(email, full_name, dtString)
+            print(f"Email: {email}, Username: {full_name}, Datetime: {dtString}")
+            sheet.write_in4_to_spreadsheet(email, full_name, dtString)
             return redirect(url_for('views.home'))
     return render_template("login.html")
