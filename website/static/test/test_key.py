@@ -19,7 +19,7 @@ try:
     print(f"Successfully connected to {sheet_name}")
     
     # Test reading a value
-    cell_value = sheet.cell(1, 1).value  # Reads the value of the first cell (A1)
+    cell_value = sheet.cell(1, 1).value 
     print(f"The value in A1 is: {cell_value}")
 
 except Exception as e:
