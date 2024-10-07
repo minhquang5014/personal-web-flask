@@ -6,14 +6,14 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
           'https://www.googleapis.com/auth/drive']
 
 # Path to your credentials JSON file
-CREDENTIALS_FILE = '/personal_portfolio/website/key.json'
+CREDENTIALS_FILE = 'website/key.json'
 
 # Authenticate and create a service account client
 credentials = Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=SCOPES)
 client = gspread.authorize(credentials)
 
 # Open the Google Sheet by name
-sheet_name = 'database_for_web'  # Replace with your sheet's name
+sheet_name = 'database'  # Replace with your sheet's name
 try:
     sheet = client.open(sheet_name).sheet1
     print(f"Successfully connected to {sheet_name}")

@@ -13,7 +13,7 @@ credentials = Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=SCO
 client = gspread.authorize(credentials)
 
 # Open the Google Sheet by name
-sheet_name = 'database_for_web'  # Replace with your sheet's name
+sheet_name = 'database'  # Replace with your sheet's name
 try:
     sheet = client.open(sheet_name).sheet1
     print(f"Successfully connected to {sheet_name}")
