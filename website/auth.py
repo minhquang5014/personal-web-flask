@@ -22,5 +22,7 @@ def login():
             sheet = GoogleSheetClient('website/key.json', 'database')
             print(f"Email: {email}, Username: {full_name}, Datetime: {dtString}")
             sheet.write_in4_to_spreadsheet(email, full_name, dtString)
-            return redirect(url_for('views.home'))
+            resp = redirect(url_for('views.home'))
+            resp.set_cookie('login', 'true')
+            return resp
     return render_template("login.html")
