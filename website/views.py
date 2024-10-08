@@ -1,12 +1,15 @@
 from flask import Blueprint, render_template
 from flask_login import login_required
+from flask import request, redirect, url_for
 
 views = Blueprint('views', __name__)
 
 
 @views.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template("home.html")
+    if 'login' in request.cookies:
+        return render_template("home.html")
+    return redirect(url_for('auth.login'))
 
 
 @views.route('/ml', methods=['GET', 'POST'])
