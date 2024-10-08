@@ -9,3 +9,5 @@ authentication - if user.is_authenticated (the sidebar must on show up on the lo
 div - class="home-sci" on the home.html page
 
 the menu button must be sticked at the top of every pages (except for the login page)
+
+also figure the environment variable for secret key and json key - os.getenv
