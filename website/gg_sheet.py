@@ -23,7 +23,7 @@ class GoogleSheetClient:
             # this is running much faster and more efficiently
             sheet.append_row([email, username, datetime])
 
-            # the method of calculating manually on which row the data should be written on is so complicated 
+            # the method of calculating manually which row the data should be written on is so inefficient 
             # email_column = sheet.col_values(1)
             # next_line = len(email_column) + 1
             # sheet.update_cell(next_line, 1, email)
