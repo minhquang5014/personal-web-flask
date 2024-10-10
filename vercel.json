@@ -8,8 +8,25 @@
     ],
     "routes": [
       {
-        "src": "/(.*)",
-        "dest": "main.py"
+        "src": "/",
+        "dest": "main.py" 
+      },
+      {
+        "src": "/ml",
+        "dest": "main.py"  
+      },
+      {
+        "src": "/computer-vision",
+        "dest": "main.py"  
+      },
+      {
+        "src": "/software",
+        "dest": "main.py"  
+      },
+      {
+        "src": "/other-achievements",
+        "dest": "main.py"  
       }
-      ]
-    }
+    ]
+  }
+  
