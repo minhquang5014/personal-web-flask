@@ -10,6 +10,6 @@ div - class="home-sci" on the home.html page
 
 the menu button must be sticked at the top of every pages (except for the login page)
 
-also figure the environment variable for secret key and json key - os.getenv
+also figure the environment variable for secret key and json key - os.getenv - done
 
 also add images to the pages - done

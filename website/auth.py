@@ -1,6 +1,9 @@
 from flask import Blueprint, request, flash, redirect, url_for, render_template
 from flask_login import login_user, login_required, current_user
 from website.gg_sheet import GoogleSheetClient
+
+from dotenv import load_dotenv
+import os
 auth = Blueprint('auth', __name__)
 
 
@@ -19,8 +22,8 @@ def login():
             from datetime import datetime
             now = datetime.now()
             dtString = now.strftime('%d/%m/%Y-%H:%M:%S')
-            sheet = GoogleSheetClient('website/key.json', 'database')
-            print(f"Email: {email}, Username: {full_name}, Datetime: {dtString}")
+            load_dotenv()
+            sheet = GoogleSheetClient(os.getenv('DATABASE'), 'database')
             sheet.write_in4_to_spreadsheet(email, full_name, dtString)
             resp = redirect(url_for('views.home'))
             resp.set_cookie('login', 'true')
