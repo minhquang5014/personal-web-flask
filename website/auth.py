@@ -25,4 +25,4 @@ def login():
             resp = redirect(url_for('views.home'))
             resp.set_cookie('login', 'true')
             return resp
-    return render_template("login.html", user=current_user)
+    return render_template("login.html")
