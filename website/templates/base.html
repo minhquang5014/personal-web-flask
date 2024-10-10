@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- <meta http-equiv="X-UA-Compatible" content ="width=device-width, initial-scale=1.0"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
@@ -28,12 +29,12 @@
         {% if request.path != url_for('auth.login') %}
         <div id="navbar" class="sidebar">
             <ul>
-                <li style="--1:1"><a href="/"><i class="fa-solid fa-user">About Me</i></a></li>
-                <li style="--1:2"><a href="ml"><i class="fas fa-tv">Machine learning</i></a></li>
-                <li style="--1:3"><a href="computer-vision"><i class="fas fa-tv">Computer vision</i></a></li>
-                <li style="--1:3"><a href="software"><i class="fas fa-tv">Software</i></a></li>
-                <li style="--1:4"><a href="other-achievements"><i class="fas fa-tv">Other achievements</i></a></li>
-                <li style="--1:5"><a href="/"><i class="far fa-comment">Contact</i></a></li>
+                <li style="--1:1"><a href="/"><i class="fa-solid fa-user"></i> ABOUT ME</a></li>
+                <li style="--1:2"><a href="ml"><i class="fas fa-tv"></i>MACHINE LEARNING</a></li>
+                <li style="--1:3"><a href="computer-vision"><i class="fas fa-tv"></i>COMPUTER VISION</a></li>
+                <li style="--1:3"><a href="software"><i class="fas fa-tv"></i>SOFTWARE</a></li>
+                <li style="--1:4"><a href="other-achievements"><i class="fas fa-tv"></i>OTHER ACHIEVEMENTS</a></li>
+                <li style="--1:5"><a href="/"><i class="far fa-comment"></i>CONTACT</a></li>
             </ul>
         </div>
         <div id="main" class="main-content">
@@ -47,7 +48,7 @@
             {% for category, message in messages %}
                 <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
                     {{ message }}
-                    <button type="button" class="close" data-dismiss="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -60,8 +61,8 @@
         {% endblock %}
 
         <script
-            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha384-ZvpUoO/+Pew5drLcZot+vFzlUPOmUKWvT1pF9CqE1DGFmHD5uFn/PpFLLf/xNGxR"
             crossorigin="anonymous"
         ></script>
         <script
@@ -74,6 +75,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
+
         <script src="/static/toggle.js"></script>
     </body>
 </html>
