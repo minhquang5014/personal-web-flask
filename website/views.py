@@ -7,10 +7,9 @@ views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
 def home():
-    # if 'login' in request.cookies:
-    #     return render_template("home.html")
-    # return redirect(url_for('auth.login'))
-    return render_template("home.html")
+    if 'login' in request.cookies:
+        return render_template("home.html")
+    return redirect(url_for('auth.login'))
 
 
 @views.route('/ml', methods=['GET', 'POST'])
