@@ -12,4 +12,4 @@ the menu button must be sticked at the top of every pages (except for the login 
 
 also figure the environment variable for secret key and json key - os.getenv
 
-also add images to the pages
+also add images to the pages - done
