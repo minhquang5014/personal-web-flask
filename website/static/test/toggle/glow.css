@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+}
+
+.glow {
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.glow:hover {
+    opacity: 0.8;
+}
