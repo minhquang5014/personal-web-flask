@@ -18,7 +18,7 @@ def login():
         elif len(full_name) < 6:
             flash("Name must be greater than 5 character", category='danger')
         else:
-            flash(f"Welcome {full_name} to join in my personal website", category='success')
+            # flash(f"Welcome {full_name} to join in my personal website", category='success')
             from datetime import datetime
             now = datetime.now()
             dtString = now.strftime('%d/%m/%Y-%H:%M:%S')
