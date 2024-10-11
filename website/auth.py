@@ -14,6 +14,6 @@ def login():
         elif len(full_name) < 6:
             flash("Name must be greater than 5 character", category='danger')
         else:
-            flash(f"Welcome {full_name} to join in my personal website", category='success')
+            # flash(f"Welcome {full_name} to join in my personal website", category='success')
             return redirect(url_for('views.home'))
     return render_template("login.html")

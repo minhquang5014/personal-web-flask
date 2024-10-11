@@ -25,6 +25,20 @@
 
     </head>
     <body>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {% if request.path != url_for('auth.login') %}
         <div id="navbar" class="sidebar">
             <ul>
                 <li style="--1:1"><a href=""><i class="fa-solid fa-user">About Me</i></a></li>
@@ -40,8 +54,9 @@
             {% block content %}
             {% endblock %}
         </div>
+        {% endif %}
 
-        {% with messages = get_flashed_messages(with_categories=true) %}
+        <!-- {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
                 <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
@@ -52,7 +67,7 @@
                 </div>
             {% endfor %}
         {% endif %}
-        {% endwith %}
+        {% endwith %} -->
 
         <!-- The block below is for content -->
         {% block content2 %}
