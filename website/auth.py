@@ -26,6 +26,7 @@ def login():
                 load_dotenv()
                 sheet = GoogleSheetClient(os.getenv('DATABASE'), 'database')
                 sheet.write_in4_to_spreadsheet(email, full_name, dtString)
+                print("successfully writing in4 to database")
             except Exception as e:
                 print(e)
             resp = redirect(url_for('views.home'))
