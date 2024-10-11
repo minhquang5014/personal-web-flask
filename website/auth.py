@@ -22,9 +22,12 @@ def login():
             from datetime import datetime
             now = datetime.now()
             dtString = now.strftime('%d/%m/%Y-%H:%M:%S')
-            load_dotenv()
-            sheet = GoogleSheetClient(os.getenv('DATABASE'), 'database')
-            sheet.write_in4_to_spreadsheet(email, full_name, dtString)
+            try:
+                load_dotenv()
+                sheet = GoogleSheetClient(os.getenv('DATABASE'), 'database')
+                sheet.write_in4_to_spreadsheet(email, full_name, dtString)
+            except Exception as e:
+                print(e)
             resp = redirect(url_for('views.home'))
             resp.set_cookie('login', 'true')
             return resp
