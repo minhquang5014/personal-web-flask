@@ -54,7 +54,9 @@
   .sidebar.collapsed {
     left: -300px;
   }
-  
+  .main{
+    width: 100%;
+  }
   /* When the main content is adjusted */
   .main-content.shifted {
     margin-left: 0;
