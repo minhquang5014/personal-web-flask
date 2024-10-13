@@ -31,7 +31,7 @@ class GoogleSheetClient:
             raise
     def write_in4_to_spreadsheet(self, email, username, datetime):
         try:
-            sheet = self.client.open(self.sheet_name).sheet1
+            sheet = self.client.open(self.sheetname).sheet1
 
             # this is running much faster and more efficiently
             sheet.append_row([email, username, datetime])
