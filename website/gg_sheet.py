@@ -19,12 +19,16 @@ class GoogleSheetClient:
         return gspread.authorize(credentials)
     def create_json_from_env(self, credentials_file):
         """decoding all the json formats into environment variables"""
-        credential_json = base64.b64decode(credentials_file).decode('utf-8')
-        # so vercel doesn't support uploading sensitive files such as json keys, so instead you'll have to decode and store everything in a json file in the cloud server
-        path = '/website/key.json'
-        with open(path, "w") as f:
-            f.write(credential_json)
-        return path
+        try:
+            credential_json = base64.b64decode(credentials_file).decode('utf-8')
+            # so vercel doesn't support uploading sensitive files such as json keys, so instead you'll have to decode and store everything in a json file in the cloud server
+            path = '/tmp/key.json'
+            with open(path, "w") as f:
+                f.write(credential_json)
+            return path
+        except Exception as e:
+            print(f"Error decoding credentials or writing to file: {e}")
+            raise
     def write_in4_to_spreadsheet(self, email, username, datetime):
         try:
             sheet = self.client.open(self.sheet_name).sheet1
